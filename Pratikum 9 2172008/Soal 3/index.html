@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        table{
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        tr{
+            height: 20px;
+            width: 30px;
+            border: 2px solid black;
+        }
+        td{
+            height: 20px;
+            width: 400px;
+            border: 2px solid black;
+            text-align: center;
+        }  
+        .obstacle{
+            background-color: maroon;
+            color: white;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="2172008 Christopher Richard Alexander">
+    <title>Soal 3</title>
+</head>
+<body>
+    <table>
+    <script>
+        let n = parseInt(prompt("Minta berapa obstacle?"));
+        let obstacle = 0;
+        const a = [];
+        let check = 0;
+
+        for(let i=0;i<n;i++){
+            while (true){
+                check = 0;
+                a[i]= Math.floor(Math.random()*25);
+                for(let j=0; j<i; j++){
+                    if(a[i]==a[j]){
+                        check = 1;
+                    }
+                }
+                if(check == 0){
+                    break;
+                }
+            }
+            
+        }
+        for(let i= 0;i<25;i++){
+            obstacle = 0;
+            if(i%5==0 && i!=0 ){
+                document.write("</tr>");
+            }
+            if(i%5==0 ||i==0 ){
+                document.write("<tr>");
+            }
+            for(let j = 0;j<a.length;j++){
+                if(i==a[j]){
+                    obstacle=1;
+                }
+            }
+            if(obstacle==0){
+                document.write("<td>"+i+"</td>");
+            }
+            else{
+                document.write("<td class='obstacle'>"+i+"</td>");
+            }
+        }
+    </script>
+    </table>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="2172008 Christopher Richard Alexander" />
+    <title>Soal 1</title>
+    <style>
+      .circle {
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+        float: left;
+        text-align: center;
+        background-color: gray;
+      }
+      #container {
+        margin: auto;
+      }
+      p {
+        margin-top: 10px;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body >
+    <div id="container">
+      <script>
+        function printCircle(){
+            let jumlah = prompt("Berapa NxN bola yang ingin dibuat?");
+            for(let i = jumlah*jumlah; i>0; i--){
+                if(jumlah>=4 && i<=9){
+                  document.write("<div class='circle'><p>0"+i+"</p></div>");
+                }
+                else{
+                  document.write("<div class='circle'><p>"+i+"</p></div>");
+                }
+            }
+            document.getElementById('container').style.width=(jumlah*50)+'px';
+        }
+        printCircle()
+      </script>
+    </div>
+  </body>
+</html>

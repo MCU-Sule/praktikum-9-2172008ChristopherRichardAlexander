@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, td{
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        .grey{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var i = 0;
+        const nama = [];
+        const warna = [];
+        let jumlah = 0;
+        let orang = "";
+
+        while(true){
+            nama[i] = prompt("Masukkan Nama:");
+            if(nama[i] == "stop"){
+                break;
+            }
+            warna[i] = prompt("Masukkan Warna Kesukaan (English):");
+            i++;
+        }          
+        let cari = prompt("Masukan warna yang ingin dicari:");  
+        document.write("<table><tr><td class='grey'>Nama</td><td class='grey'>Warna Kesukaan</td></tr>")
+  
+        for(let j=0;j<i;j++){
+            document.write("<tr><td style='background-Color:"+warna[j]+"'>"+nama[j]+"</td><td style='background-Color:"+warna[j]+"'>"+warna[j]+"</td></tr>")
+        }
+        document.write("</table>")
+        for(let j=0;j<i;j++){
+            if(cari == warna[j]){
+                jumlah++;
+                orang += nama[j]+ " ";
+            }
+        }
+        if(jumlah==0){
+            document.write("Tidak ada yang menyukai warna tersebut")
+        }
+        else{
+            document.write("Ada "+jumlah+" orang yang menyukai warna "+cari+" yaitu "+orang)
+        }
+        
+    </script>
+</body>
+</html>
